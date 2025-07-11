@@ -1,23 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo - Annisa</title>
-    
-    <!-- Link CSS -->
-     <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Link Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Website -->
-    <header>
-        <h1>Todo List</h1>
-    </header>
+  <header>
+    <h1 class="app-title">My Todo List App</h1>
+  </header>
 
-    <main></main>
+  <main>
+    <div class="container">
+      <h2>Todo List</h2>
 
-    <footer>
-        <span>&#169; 2025 Annisa. All rights reserved.</span>
-    </footer>
+      <div class="form">
+        <input type="text" id="task-input" placeholder="Add a todo . . ." />
+        <input type="date" id="date-input" placeholder="Due" />
+        <button id="add-btn">+</button>
+      </div>
+
+      <div class="controls">
+        <label for="filter-status" class="sr-only">Filter by Status</label>
+        <select id="filter-status" aria-label="Filter by Status">
+          <option value="all">All</option>
+          <option value="done">Done</option>
+          <option value="pending">Pending</option>
+        </select>
+
+        <label for="filter-date" class="sr-only">Filter by Date</label>
+        <input type="date" id="filter-date" title="Filter by Date" />
+
+        <button id="delete-all-btn">DELETE ALL</button>
+      </div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>TASK</th>
+            <th>DUE DATE</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <tbody id="task-list">
+          <tr><td colspan="4">No task found</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align: center; padding: 1rem; color: #94a3b8;">&copy; 2025 Annisa. All rights reserved</p>
+  </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
